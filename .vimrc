@@ -29,14 +29,9 @@ set cursorline   " 顯示目前的游標位置
 set laststatus=2
 set statusline=%4*%<\%m%<[%f\%r%h%w]\ [%{&ff},%{&fileencoding},%Y]%=\[Position=%l,%v,%p%%]
 
-:set nu"
-
+" 顯示行號
+:set nu
 ":set rnui 相對行號
-
-" High light unwanted spaces in end of line
-highlight ExtraWhitespace ctermbg=darkred guibg=darkcyan
-autocmd BufEnter * if &ft != 'help' | match ExtraWhitespace /\s\+$/ | endif
-autocmd BufEnter * if &ft == 'help' | match none /\s\+$/ | endif
 
 "增加縮排，縮排設定檔在 .vim/indent/*.vim
 filetype indent on
